@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import rootReducer from './reducer'
-import rootSaga from './saga'
+import rootReducer from '../reducers/rootReducer'
+import rootSaga from '../sagas/rootSaga'
 
 const composeEnhancers =
   typeof window === 'object' &&

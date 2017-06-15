@@ -9,14 +9,16 @@ import {
 
 import { connect, Provider } from 'react-redux'
 import { compose } from 'recompose'
-import configureStore from './configureStore'
+import configureStore from './app/store/configureStore'
+
+import RootRoutes from './app/routes/RootRoutes'
 
 const store = configureStore()
 
 const App = () => (
   <Provider store={store}>
     <Router>
-      {/* Make some components! */}
+      <RootRoutes />
     </Router>
   </Provider>
 )
