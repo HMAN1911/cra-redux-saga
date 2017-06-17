@@ -15,13 +15,24 @@ const configureStore = () => {
   const enhancer = composeEnhancers(
     applyMiddleware(sagaMiddleware)
   )
-  return {
+
+  const store =  {
     ...createStore(
       rootReducer,
       enhancer,
     ),
     runSaga: sagaMiddleware.run(rootSaga)
   }
+
+  if(process.env.NODE_ENV !== 'production') {
+    if(module.hot) {
+      module.hot.accept('../reducers/rootReducer', () =>{
+        const newRootReducer = require('../reducers/rootReducer').default
+        store.replaceReducer(newRootReducer)
+      })
+    }
+  }
+  return store
 }
 
 export default configureStore
