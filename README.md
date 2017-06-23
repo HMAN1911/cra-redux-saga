@@ -1,6 +1,6 @@
 ## What is this?
 
-basically a Create React App starting point with redux, redux-saga, react-router@4 and glamorous as a CSS-in-JS option.
+basically a Create React App starting point with redux, redux-saga and react-router@4.
 
 ## Why
 
