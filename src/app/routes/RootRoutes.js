@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import Sample from '../sampleFeature/Sample'
+
 const Home = () => (
   <div>Implement Me!</div>
 )
@@ -12,8 +14,8 @@ const Dashboard = () => (
 const RootRoute = () => (
   <div>
     <Switch>
-      <Route path="/" component={Home} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/sample" component={Sample} />
     </Switch>
   </div>
 )
