@@ -1,0 +1,8 @@
+{
+  "development": {
+    "apiUrl": "http://localhost:1738/"
+  },
+  "production": {
+    "apiUrl": "__your-url__"
+  }
+}
