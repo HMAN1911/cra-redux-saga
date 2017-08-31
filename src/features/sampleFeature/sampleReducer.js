@@ -10,13 +10,13 @@ const sampleReducer = createReducer(
   // define supported actions here
   {
     [toggleState]: (state) => Object.assign({}, state, {sample: !state.sample}),
-    [setSampleRequest]: (state) => Object.assign({}, state, {isFetching: true}),
-    [setSampleSuccess]: (state) => Object.assign({}, state, {isFetching: false})
+    [setSampleRequest]: (state) => Object.assign({}, state, {isFetchingSample: true}),
+    [setSampleSuccess]: (state) => Object.assign({}, state, {isFetchingSample: false, sample: !state.sample})
   },
   // default state defined here
   {
     sample: false,
-    isFetching: false
+    isFetchingSample: false
   }
 )
 

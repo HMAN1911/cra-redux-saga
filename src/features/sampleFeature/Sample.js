@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 
 import { toggleState, setSampleRequest } from './sampleActions'
 
-const Sample = ({ sample, isFetching, toggleState, setSampleRequest }) =>
+const Sample = ({ sample, isFetchingSample, toggleState, setSampleRequest }) =>
   <div>
     {
-      isFetching && <span>Fetching...</span>
+      isFetchingSample && <span>Fetching...</span>
     }
     <button onClick={() => toggleState(null)}>Toggle Sample State</button>
     <button onClick={() => setSampleRequest(null)}>Trigger Request Sample</button>
