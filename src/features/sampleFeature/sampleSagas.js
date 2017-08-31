@@ -1,7 +1,10 @@
 import { delay } from 'redux-saga'
-import { put, call, takeLatest, all } from 'redux-saga/effects'
+import { put, takeLatest } from 'redux-saga/effects'
 
-import { toggleState, setSampleSuccess, setSampleRequest } from './sampleActions'
+import {
+  setSampleSuccess,
+  setSampleRequest
+} from './sampleActions'
 
 export function* setSample() {
   yield delay(1000)
