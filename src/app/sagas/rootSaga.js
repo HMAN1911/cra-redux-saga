@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga'
-import { put, takeLatest, all } from 'redux-saga/effects'
+import { all } from 'redux-saga/effects'
 
 import { watchSetSample } from '../../features/sampleFeature/sampleSagas'
 
