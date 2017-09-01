@@ -7,19 +7,30 @@ const Sample = ({
   sample,
   isFetchingSample,
   toggleState,
-  setSampleRequest
-}) => (
-  <div>
-    {isFetchingSample && <span>Fetching...</span>}
-    <button onClick={() => toggleState(null)}>Toggle Sample State</button>
-    <button onClick={() => setSampleRequest(null)}>
-      Trigger Request Sample
-    </button>
-    Hi. Your sample status is {`${sample}`}.
-  </div>
-)
+  setSampleRequest,
+  location
+}) => {
+  if (location.type === 'HOME') {
+    return <div>
+      {isFetchingSample && <span>Fetching...</span>}
+      <button onClick={() => toggleState(null)}>Toggle Sample State</button>
+      <button onClick={() => setSampleRequest(null)}>
+        Trigger Request Sample
+      </button>
+      Hi. Your sample status is {`${sample}`}.
+    </div>
+  }
+  if (location.type === 'BANANA') {
+    return <div>
+      This is banana.
+    </div>
+  }
+}
 
-const mapState = state => state.sample
+const mapState = state => ({
+  location: state.location,
+  ...state.userId.sample
+})
 
 export default connect(mapState, {
   toggleState,

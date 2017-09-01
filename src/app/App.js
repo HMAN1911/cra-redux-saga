@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import Link, { NavLink } from 'redux-first-router-link'
 
 import Sample from '../features/sampleFeature/Sample'
 import './globalStyles'
@@ -12,13 +12,15 @@ const Dashboard = () => (
   <div>Oh good you're here.</div>
 )
 
+const Nav = () =>
+  <div>
+    <NavLink exact to='/home'>HOME</NavLink>
+  </div>
+
 const RootRoute = () => (
   <div>
-    <Switch>
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/sample" component={Sample} />
-      <Route path="/" component={Home} />
-    </Switch>
+    <Nav />
+    <Sample />
   </div>
 )
 

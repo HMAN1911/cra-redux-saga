@@ -7,6 +7,7 @@ import {
 } from './sampleActions'
 
 export function* setSample() {
+  yield put({ type: 'BANANA', payload: { id: 5 } })
   yield delay(1000)
   yield put(setSampleSuccess())
 }
