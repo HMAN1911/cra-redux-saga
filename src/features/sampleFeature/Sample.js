@@ -8,10 +8,15 @@ const Sample = ({
   isFetchingSample,
   toggleState,
   setSampleRequest,
-  location
+  location,
+  lol
 }) => {
   if (location.type === 'HOME') {
     return <div>
+      <div>
+        happy fun time
+        <button onClick={lol}>click me</button>
+      </div>
       {isFetchingSample && <span>Fetching...</span>}
       <button onClick={() => toggleState(null)}>Toggle Sample State</button>
       <button onClick={() => setSampleRequest(null)}>
@@ -34,5 +39,6 @@ const mapState = state => ({
 
 export default connect(mapState, {
   toggleState,
-  setSampleRequest
+  setSampleRequest,
+  lol: () => ({ type: 'PING' })
 })(Sample)

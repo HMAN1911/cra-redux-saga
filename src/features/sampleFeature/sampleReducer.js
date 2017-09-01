@@ -15,6 +15,10 @@ const sampleReducer = createReducer(
       console.log(state, payload)
       return state
     },
+    PING: (state, payload) => {
+      console.log(state, payload)
+      return state;
+    },
     [setSampleSuccess]: state => ({
       ...state,
       isFetchingSample: false,
