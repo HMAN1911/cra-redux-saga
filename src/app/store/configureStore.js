@@ -1,12 +1,9 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
-import createSagaMiddleware from 'redux-saga'
 import { createEpicMiddleware } from 'redux-observable'
 import createHistory from 'history/createBrowserHistory'
 import { connectRoutes } from 'redux-first-router'
 import rootReducer from '../reducers/rootReducer'
-import rootSaga from '../sagas/rootSaga'
-
-import 'rxjs';
+import rootEpic from '../../app/epics/rootEpic'
 
 const history = createHistory()
 
@@ -14,14 +11,6 @@ const routesMap = {
   HOME: '/home',
   BANANA: '/',
 }
-
-const PING = 'PING';
-const PONG = 'PONG';
-
-const pingEpic = action$ =>
-  action$.ofType(PING)
-    .delay(1000) // Asynchronously wait 1000ms then continue
-    .mapTo({ type: PONG });
 
 const {
   reducer: routerReducer,
@@ -40,9 +29,7 @@ const composeEnhancers =
     }) : compose
 
 const configureStore = () => {
-  // const sagaMiddleware = createSagaMiddleware()
-  const epicMiddleware = createEpicMiddleware(pingEpic)
-
+  const epicMiddleware = createEpicMiddleware(rootEpic)
   const middlewares = applyMiddleware(epicMiddleware, routerMiddleware)
 
   const store =  {

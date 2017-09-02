@@ -11,13 +11,8 @@ const sampleReducer = createReducer(
   {
     [toggleState]: state => ({ ...state, sample: !state.sample }),
     [setSampleRequest]: state => ({ ...state, isFetchingSample: true }),
-    ['HOME']: (state, payload) => {
-      console.log(state, payload)
+    HOME: (state, payload) => {
       return state
-    },
-    PING: (state, payload) => {
-      console.log(state, payload)
-      return state;
     },
     [setSampleSuccess]: state => ({
       ...state,
