@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { toggleState, setSampleRequest } from './sampleActions'
+import { toggleState, setSampleRequest, githubUsersRequest } from './sampleActions'
 
 const Sample = ({
   sample,
   isFetchingSample,
   toggleState,
   setSampleRequest,
+  githubUsersRequest,
   location
 }) => {
   if (location.type === 'HOME') {
@@ -15,7 +16,7 @@ const Sample = ({
       <div>
         {isFetchingSample && <span>Fetching...</span>}
         <button onClick={() => toggleState(null)}>Toggle Sample State</button>
-        <button onClick={() => setSampleRequest(null)}>
+        <button onClick={() => githubUsersRequest(null)}>
           Trigger Request Sample
         </button>
         Hi. Your sample status is {`${sample}`}.
@@ -37,4 +38,5 @@ const mapState = state => ({
 export default connect(mapState, {
   toggleState,
   setSampleRequest,
+  githubUsersRequest
 })(Sample)

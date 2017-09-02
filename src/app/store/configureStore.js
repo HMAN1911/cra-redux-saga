@@ -44,9 +44,14 @@ const configureStore = () => {
 
   if(process.env.NODE_ENV !== 'production') {
     if(module.hot) {
-      module.hot.accept('../reducers/rootReducer', () =>{
+      module.hot.accept('../reducers/rootReducer', () => {
         const newRootReducer = require('../reducers/rootReducer').default
         store.replaceReducer(newRootReducer)
+      })
+      // for epics
+      module.hot.accept('../epics/rootEpic', () => {
+        const rootEpic = require('../epics/rootEpic').default
+        epicMiddleware.replaceEpic(rootEpic)
       })
     }
   }
