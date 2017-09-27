@@ -3,7 +3,7 @@ import { createReducer } from 'redux-act'
 import {
   toggleState,
   setSampleRequest,
-  setSampleSuccess
+  setSampleSuccess,
 } from './sampleActions'
 
 const sampleReducer = createReducer(

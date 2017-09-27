@@ -1,11 +1,12 @@
 import { combineEpics } from 'redux-observable'
 
-import { sampleEpic, fetchEpic, tickerEpic } from '../../features/sampleFeature/sampleEpics'
+import { sampleEpic, fetchEpic, tickerEpic, establishSocketEpic } from '../../features/sampleFeature/sampleEpics'
 
 export const rootEpic = combineEpics(
   sampleEpic,
   fetchEpic,
-  tickerEpic
+  // tickerEpic,
+  establishSocketEpic
 )
 
 export default rootEpic

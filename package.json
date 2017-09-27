@@ -17,6 +17,7 @@
     "redux-observable": "^0.16.0",
     "redux-saga": "^0.15.3",
     "rxjs": "5",
+    "socket.io-client": "^2.0.3",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
