@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import Sample from '../features/sampleFeature/Sample'
+import UserForm from '../features/sampleForm/UserForm'
 import './globalStyles'
 
 const Home = () => (
@@ -17,7 +18,8 @@ const RootRoute = () => (
     <Switch>
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/sample" component={Sample} />
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route path="/form" component={UserForm} />
     </Switch>
   </div>
 )
